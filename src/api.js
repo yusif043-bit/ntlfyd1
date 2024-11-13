@@ -1,15 +1,9 @@
 const express = require('express');
 const serverless = require('serverless-http');
+const indexRouter = require('../app_server/routers/indexRouter');
 
 const app = express();
 
-const router = express.Router();
-
-router.get('/', (req, res)=>{
-    res.send('Nehayett');
-    res.end('Bitti');
-});
-
-app.use('/.netlify/functions/api',router);
+app.use('/',indexRouter);
 
 module.exports.handler = serverless(app);

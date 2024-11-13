@@ -1,6 +1,8 @@
 var express = require('express');
-var indexController = require('../controllers/indexController.js');
+var indexController = require('../controllers/indexController');
 
 var router = express.Router();
 
-router.get('/.netlify/functions/api', indexController);
+router.get('/.netlify/functions/api', indexController.indexGet);
+
+module.exports = router;
